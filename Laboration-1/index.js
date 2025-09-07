@@ -24,6 +24,40 @@ inputContainer.appendChild(submitButton)
 // Add input container to body
 document.body.appendChild(inputContainer)
 
+// Confetti function
+function createConfetti() {
+  const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500']
+  
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div')
+    confetti.className = 'confetti'
+    
+    // Random position across the top of the screen
+    confetti.style.left = Math.random() * 100 + '%'
+    confetti.style.top = '-100px'
+    confetti.style.backgroundColor = colors[Math.random() * colors.length | 0]
+    
+    // Random size
+    const size = Math.random() * 8 + 4
+    confetti.style.width = size + 'px'
+    confetti.style.height = size + 'px'
+    
+    // Apply the animation directly
+    const duration = Math.random() * 2 + 2 + 's'
+    const delay = Math.random() * 2 + 's'
+    confetti.style.animation = `confetti-fall ${duration} linear ${delay} forwards`
+    
+    document.body.appendChild(confetti)
+    
+    // Remove confetti after animation completes
+    setTimeout(() => {
+      if (confetti.parentNode) {
+        confetti.remove()
+      }
+    }, 5000)
+  }
+}
+
 // Add event listener to submit button
 submitButton.addEventListener('click', handleSubmit)
  
@@ -39,6 +73,9 @@ function handleSubmit() {
       document.body.appendChild(greeting)
     }
     greeting.textContent = `Hi ${name}! Welcome to 1DV610!!! Here is a cookie for you: 🍪`
+    
+    // Trigger confetti!
+    createConfetti()
   }
 }
 
@@ -48,3 +85,4 @@ nameInput.addEventListener('keypress', function(event) {
     handleSubmit()
   }
 })
+
