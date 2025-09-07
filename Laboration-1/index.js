@@ -23,3 +23,21 @@ inputContainer.appendChild(submitButton)
  
 // Add input container to body
 document.body.appendChild(inputContainer)
+
+// Add event listener to submit button
+submitButton.addEventListener('click', handleSubmit)
+ 
+// Handle form submission
+function handleSubmit() {
+  const name = nameInput.value.trim()
+   
+  if (name) {
+    let greeting = document.getElementById('greeting')
+    if (!greeting) {
+      greeting = document.createElement('div')
+      greeting.id = 'greeting'
+      document.body.appendChild(greeting)
+    }
+    greeting.textContent = `Hi ${name}!`
+  }
+}
