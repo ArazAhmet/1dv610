@@ -41,3 +41,10 @@ function handleSubmit() {
     greeting.textContent = `Hi ${name}!`
   }
 }
+
+// Add Enter key support
+nameInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    handleSubmit()
+  }
+})
