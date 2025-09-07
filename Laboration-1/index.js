@@ -38,7 +38,7 @@ function handleSubmit() {
       greeting.id = 'greeting'
       document.body.appendChild(greeting)
     }
-    greeting.textContent = `Hi ${name}!`
+    greeting.textContent = `Hi ${name}! Welcome to 1DV610!!! Here is a cookie for you: 🍪`
   }
 }
 
