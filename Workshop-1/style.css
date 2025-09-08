@@ -1,0 +1,15 @@
+.board{
+  width: 1200px;
+  height: 900px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.tile{
+  background-color: lightblue;
+  width: 100px;
+  height: 96.9px;
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+}
